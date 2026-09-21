@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# 模型权重（体积过大，不提交 GitHub，请从 HuggingFace 下载）
+models/deepseek/*.safetensors
+models/deep/*.safetensors
+
+# 生成输出
+output/
+logs/
+experiments_results/
+charts/
+
+# 文档（按需保留）
+report.docx
+
+# 系统文件
+.DS_Store
+Thumbs.db

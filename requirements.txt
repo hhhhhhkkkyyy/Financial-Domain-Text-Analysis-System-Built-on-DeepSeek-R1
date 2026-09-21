@@ -1,0 +1,57 @@
+# ============================================================
+# 金融文本智能分析系统 - 依赖包
+# Financial Text Intelligent Analysis System Dependencies
+# ============================================================
+
+# Core ML/DL frameworks
+torch>=1.12.0
+transformers>=4.36.0
+accelerate>=0.25.0
+
+# Model serving (Transformers only, no vLLM)
+
+# Document processing
+PyPDF2>=3.0.0
+pdfplumber>=0.10.0
+python-docx>=1.1.0
+python-pptx>=0.6.23
+markdown>=3.5.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+
+# NLP tools
+jieba>=0.42.1
+nltk>=3.8.0
+
+# Web framework
+streamlit>=1.28.0
+gradio>=4.0.0
+flask>=3.0.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+
+# API client
+openai>=1.6.0
+requests>=2.31.0
+
+# Visualization
+matplotlib>=3.7.0
+plotly>=5.17.0
+wordcloud>=1.9.3
+
+# Quantization support
+bitsandbytes>=0.41.0
+auto-gptq>=0.5.0
+
+# Utility
+tqdm>=4.66.0
+pyyaml>=6.0
+json5>=0.9.14
+rich>=13.7.0
+python-multipart>=0.0.6
+
+# Testing
+pytest>=7.4.0
