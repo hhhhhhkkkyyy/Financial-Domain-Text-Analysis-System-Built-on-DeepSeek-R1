@@ -1,0 +1,92 @@
+# ============================================================
+# 金融文本智能分析系统 - 配置文件
+# ============================================================
+
+system:
+  name: "金融文本智能分析系统"
+  version: "1.0.0"
+  description: "基于DeepSeek-R1-Distill-Qwen-1.5B的金融文本智能分析平台"
+
+# 模型配置
+model:
+  name: "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
+  local_path: ""  # 用户自定义路径，启动时设置
+  trust_remote_code: true
+  device_map: "auto"
+  torch_dtype: "float16"
+
+  # 量化配置
+  quantization:
+    enabled: false
+    method: "int8"
+    bits: 8
+
+  # 生成参数
+  generation:
+    temperature: 0.3
+    top_p: 0.9
+    repetition_penalty: 1.1
+    max_new_tokens: 2048
+    do_sample: true
+
+# 金融分析配置
+financial_analysis:
+  # 事件类型标签体系
+  event_types:
+    - name: "盈利预测调整"
+      description: "公司盈利预测、业绩指引的调整"
+    - name: "风险提示"
+      description: "各类金融风险的警示与提示"
+    - name: "并购动态"
+      description: "收购、合并、重组等事件"
+    - name: "监管处罚"
+      description: "监管机构的处罚与整改"
+    - name: "评级变动"
+      description: "券商评级、目标价的调整"
+    - name: "经营指标变动"
+      description: "营收、利润等经营指标的变动"
+
+  # 方向分类
+  directions:
+    - "正面"
+    - "负面"
+    - "中性"
+
+  # 影响指标
+  impact_metrics:
+    - "营收"    - "毛利率"    - "净利率"
+    - "现金流"  - "资产负债率" - "ROE"
+    - "EPS"     - "市盈率"    - "市净率"
+
+# 长文档分段处理配置
+long_doc:
+  chunk_size: 2000
+  chunk_overlap: 200
+  section_recognition: true
+  extract_highlights: true
+
+# 数据处理配置
+data:
+  max_document_length: 100000
+  chunk_size: 2000
+  chunk_overlap: 200
+  supported_formats:
+    - "txt"
+    - "md"
+    - "csv"
+    - "pdf"
+    - "docx"
+
+# Web界面配置
+web:
+  framework: "streamlit"
+  host: "0.0.0.0"
+  port: 8501
+  theme: "light"
+
+# 实验配置
+experiments:
+  prompt_templates: 3
+  quantization_methods: ["fp16", "int8", "awq"]
+  batch_sizes: [1, 4, 8, 16]
+  event_types: 6
