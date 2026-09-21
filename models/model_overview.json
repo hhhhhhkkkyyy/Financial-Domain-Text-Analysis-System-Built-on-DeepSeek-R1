@@ -1,0 +1,16 @@
+{
+  "project": "金融文本智能分析系统",
+  "framework": "PyTorch + Transformers",
+  "models": {
+    "deepseek": {
+      "path": "models/deepseek/",
+      "architecture": "Qwen2 (DeepSeek-R1-Distill-Qwen-1.5B)",
+      "task": "Text Generation / Financial Event Extraction",
+      "params": "1.5B",
+      "fp16_memory": "3.2GB",
+      "int8_memory": "1.8GB",
+      "status": "完整权重就绪"
+    }
+  },
+  "note": "DeepSeek 模型权重已完整下载到本地（model.safetensors, 3.4GB），可直接本地加载或通过 vLLM 部署。"
+}
